@@ -10,11 +10,12 @@ import UIKit
 
 class TwoLabelTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var label1: UILabel!
-    @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var m: UIImageView!
-    @IBOutlet weak var v: UIView!
+
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var gobuy: UIButton!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var oldPrice: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,5 +30,4 @@ class TwoLabelTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

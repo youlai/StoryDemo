@@ -15,7 +15,8 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var pageNo:Int = 1
     let pageSize:Int = 20
     var loadDataSuccess:Bool = false
-    var dataArray = [[String : Any]]()
+    var productList = [Products]()
+    var limitList=[Lists]()
     
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var codeView: UIImageView!
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
         initTable()
         initBanner()
+        loadlimit()
         loadData()
     }
     
@@ -80,6 +82,30 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cycleScrollView?.delegate = self
     }
     
+    func loadlimit(){
+        var d = ["pageNo":"1",
+                 "pageSize":String(pageSize),
+                 "app_key":app_key,
+                 "timestamp":getTimestamp()
+            ] as [String : String]
+        let sign=SignTopRequest(params: d)
+        d["sign"]=sign
+        AlamofireHelper.get(url: home_limit, parameters: d, successHandler: {[weak self](res)in
+            HUD.dismiss()
+            guard let ss = self else {return}
+            ss.loadDataSuccess = true
+            let limitBuyResult=LimitBuyResult.init(json: res)
+            ss.limitList=limitBuyResult.List
+            ss.limitBuyTableView.reloadData()
+        }){[weak self] (error) in
+            HUD.dismiss()
+            guard let ss = self else {return}
+            ss.loadDataSuccess = false
+            if ss.limitBuyTableView.mj_header.isRefreshing(){ss.limitBuyTableView.mj_header.endRefreshing()}
+            else if ss.limitBuyTableView.mj_footer.isRefreshing() {ss.limitBuyTableView.mj_footer.endRefreshing()}
+        }
+    }
+    
     func loadData() {
         //HUD.show(withStatus: NSLocalizedString("Loading", comment: ""))
         var d = ["pageNo":String(pageNo),
@@ -87,7 +113,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
                  "app_key":app_key,
                  "timestamp":getTimestamp()
             ] as [String : String]
-        var sign=SignTopRequest(params: d)
+        let sign=SignTopRequest(params: d)
         d["sign"]=sign
         
         AlamofireHelper.get(url: home_list_url, parameters: d, successHandler: {[weak self] (res) in
@@ -95,20 +121,23 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
             guard let ss = self else {return}
             ss.loadDataSuccess = true
             
-            if ss.pageNo == 1{ ss.dataArray.removeAll()}
+            if ss.pageNo == 1{ ss.productList.removeAll()}
             
             if ss.limitBuyTableView.mj_header.isRefreshing(){
                 ss.limitBuyTableView.mj_header.endRefreshing()
             }else if ss.limitBuyTableView.mj_footer.isRefreshing() {
                 ss.limitBuyTableView.mj_footer.endRefreshing()
+                
             }
+            let homeResult=HomeResult.init(json: res)
             
-            if let arr = res["body"] as? [[String:Any]] {
-                if ss.limitBuyTableView.mj_footer.isHidden && arr.count > 0 {
+            
+            if homeResult.Product.count>0 {
+                if ss.limitBuyTableView.mj_footer.isHidden && homeResult.Product.count > 0 {
                     ss.limitBuyTableView.mj_footer.isHidden = false
                 }
-                ss.dataArray = ss.dataArray + arr;
-                if arr.count < 20 {
+                ss.productList.insert(contentsOf: homeResult.Product, at: ss.productList.count)
+                if ss.productList.count < 20 {
                     ss.limitBuyTableView.mj_footer.state = .noMoreData
                 }
             }else {
@@ -174,9 +203,9 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         case 0:
             return 1
         case 1:
-            return 2
+            return limitList.count
         default:
-            return 20
+            return productList.count
         }
     }
 
@@ -185,11 +214,40 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         case 0:
             let cell=tableView.dequeueReusableCell(withIdentifier: "cell")
             return cell!
+        case 1:
+            let cell=tableView.dequeueReusableCell(withIdentifier: "re") as!TwoLabelTableViewCell
+            let product=limitList[indexPath.row]
+            
+            let url = URL.init(string: product.ProductImg!)
+            cell.icon.kf.setImage(with: url, placeholder: UIImage (named: "image_loading"), options: nil, progressBlock: nil, completionHandler:nil)
+            cell.name.text=product.ProductName
+            cell.price.text="￥\(product.MinPrice)"
+            cell.oldPrice.text="￥\(product.MarketPrice)"
+            return cell
         default:
-            let cell=tableView.dequeueReusableCell(withIdentifier: "re")
-            return cell!
+            let cell=tableView.dequeueReusableCell(withIdentifier: "re") as!TwoLabelTableViewCell
+            let product=productList[indexPath.row]
+            
+            let url = URL.init(string: product.ImageUrl!)
+            cell.icon.kf.setImage(with: url, placeholder: UIImage (named: "image_loading"), options: nil, progressBlock: nil, completionHandler:nil)
+            cell.name.text=product.Name
+            cell.price.text="￥"+product.SalePrice!
+            cell.oldPrice.text="￥"+product.MarketPrice!
+            cell.gobuy.setTitle("去购买", for: .normal)
+            return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
+        case 1:
+            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
+        default:
+            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

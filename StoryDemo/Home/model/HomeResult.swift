@@ -3,69 +3,80 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class ESRootClass: NSObject {
-    
-    var TotalProduct: String?
-    
-    var Slide: [Slide]?
-    
-    var CustomerServices: [String]?
-    
-    var Product: [Products]?
-    
-    var Icon: [Icon]?
-    
-    var Topic: [Topic]?
-    
+struct HomeResult {
     var Success: String?
+    var Product = [Products]()
+    var Topic = [Topics]()
+    var TotalProduct: String?
+    var Icon = [Icons]()
+    var Slide = [Slides]()
     
-}
-class Slide: NSObject {
-    
-    var Url: String?
-    
-    var Desc: String?
-    
-    var ImageUrl: String?
-    
-}
-
-class Icon: NSObject {
-    
-    var Url: String?
-    
-    var Desc: String?
-    
-    var ImageUrl: String?
-    
+    init(json: JSON) {
+        Success = json["Success"].stringValue
+        Product = json["Product"].arrayValue.compactMap({ Products(json: $0)})
+        Topic = json["Topic"].arrayValue.compactMap({ Topics(json: $0)})
+        TotalProduct = json["TotalProduct"].stringValue
+        Icon = json["Icon"].arrayValue.compactMap({ Icons(json: $0)})
+        Slide = json["Slide"].arrayValue.compactMap({ Slides(json: $0)})
+    }
 }
 
-class Products: NSObject {
-    
+struct Products {
+    var Url: String?
+    var Name: String?
+    var CommentsCount: String?
+    var SalePrice: String?
     var Discount: String?
-    
     var ImageUrl: String?
-    
+    var MarketPrice: String?
     var Id: String?
     
-    var CommentsCount: String?
-    
-    var Url: String?
-    
-    var MarketPrice: String?
-    
-    var Name: String?
-    
-    var SalePrice: String?
-    
+    init(json: JSON) {
+        Url = json["Url"].stringValue
+        Name = json["Name"].stringValue
+        CommentsCount = json["CommentsCount"].stringValue
+        SalePrice = json["SalePrice"].stringValue
+        Discount = json["Discount"].stringValue
+        ImageUrl = json["ImageUrl"].stringValue
+        MarketPrice = json["MarketPrice"].stringValue
+        Id = json["Id"].stringValue
+    }
 }
 
-class Topic: NSObject {
-    
+struct Topics {
     var Url: String?
-    
     var ImageUrl: String?
     
+    init(json: JSON) {
+        Url = json["Url"].stringValue
+        ImageUrl = json["ImageUrl"].stringValue
+    }
 }
+
+struct Icons {
+    var Url: String?
+    var Desc: String?
+    var ImageUrl: String?
+    
+    init(json: JSON) {
+        Url = json["Url"].stringValue
+        Desc = json["Desc"].stringValue
+        ImageUrl = json["ImageUrl"].stringValue
+    }
+}
+
+struct Slides {
+    var Url: String?
+    var Desc: String?
+    var ImageUrl: String?
+    
+    init(json: JSON) {
+        Url = json["Url"].stringValue
+        Desc = json["Desc"].stringValue
+        ImageUrl = json["ImageUrl"].stringValue
+    }
+}
+
 

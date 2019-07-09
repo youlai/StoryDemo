@@ -84,10 +84,12 @@ Views are the fundamental building blocks of your app's user interface, and the 
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="gobuy" destination="XWp-Pl-gFR" id="KcS-Ia-fQK"/>
-                <outlet property="m" destination="LTk-jw-eyK" id="CSr-3w-D70"/>
-                <outlet property="v" destination="H2p-sc-9uM" id="mse-xx-Fs5"/>
+                <outlet property="icon" destination="LTk-jw-eyK" id="xQQ-2A-ieq"/>
+                <outlet property="name" destination="0mR-at-WL0" id="4Od-aF-NgI"/>
+                <outlet property="oldPrice" destination="osl-bV-N0d" id="P1w-YA-pQ4"/>
+                <outlet property="price" destination="B3e-nZ-TTe" id="9Cy-as-bLc"/>
             </connections>
-            <point key="canvasLocation" x="-460" y="309"/>
+            <point key="canvasLocation" x="-200" y="176"/>
         </tableViewCell>
     </objects>
     <resources>
