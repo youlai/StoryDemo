@@ -240,13 +240,15 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         switch indexPath.section {
-        case 0:
-            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
         case 1:
-            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
-        default:
-            self.navigationController?.pushViewController(ProductDetailViewController(), animated: true)
+            let pid = String(limitList[indexPath.row].ProductId)
+            self.navigationController?.pushViewController(ProductDetailViewController(pid: pid), animated: true)
+        case 2:
+            let pid = productList[indexPath.row].Id
+            self.navigationController?.pushViewController(ProductDetailViewController(pid: pid!), animated: true)
+        default: break
         }
     }
     

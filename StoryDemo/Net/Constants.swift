@@ -19,6 +19,7 @@ let home_list_url = "api/home/Get"//首页
 let home_json="AppHome/data/default.json"//首页
 let home_limit="api/LimitTimeBuy/GetLismitBuyList"//抢购列表
 let cate_all="api/Category/GetCategories"//所有分类
+let get_product_detail="api/product/GetProductDetail"//商品详情
 
 
 ///

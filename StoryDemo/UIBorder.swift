@@ -1,6 +1,39 @@
 import UIKit
 import Foundation
 
+extension String {
+    func color() -> UIColor {
+        var doString = self
+        // 去除空格
+        doString = doString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        var length = doString.characters.count
+        // 判断是否含有 “#”
+        if doString.hasPrefix("#"){
+            let index = doString.index(doString.startIndex, offsetBy:1)
+            doString = doString.substring(from: index)
+            length = doString.characters.count
+        }
+        if length == 6 {
+            let rRang = doString.index(doString.startIndex, offsetBy: 2)
+            let redStr = doString.substring(to: rRang)
+            doString = doString.substring(from: rRang)
+            let gRang = doString.index(doString.startIndex, offsetBy: 2)
+            let greenStr = doString.substring(to: gRang)
+            doString = doString.substring(from: gRang)
+            let blueRang = doString.index(doString.startIndex, offsetBy: 2)
+            let blueStr = doString.substring(to: blueRang)
+            // 声明三个变量
+            var r:CUnsignedInt = 0 ,g:CUnsignedInt = 0, b:CUnsignedInt = 0
+            // 获取其值
+            Scanner.init(string: redStr).scanHexInt32(&r)
+            Scanner.init(string: greenStr).scanHexInt32(&g)
+            Scanner.init(string: blueStr).scanHexInt32(&b)
+            return UIColor.init(displayP3Red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
+        }
+        return UIColor.white
+    }
+}
+
 struct UIBorderSideType: OptionSet {
     var rawValue: Int
     init(rawValue: Int) {
@@ -8,10 +41,10 @@ struct UIBorderSideType: OptionSet {
     }
     
     static var UIBorderSideTypeAll: UIBorderSideType = UIBorderSideType(rawValue: 0)
-    static var UIBorderSideTypeLeft: UIBorderSideType = UIBorderSideType(rawValue: 1 << 0)
-    static var UIBorderSideTypeRight: UIBorderSideType = UIBorderSideType(rawValue: 1 << 1)
-    static var UIBorderSideTypeTop: UIBorderSideType = UIBorderSideType(rawValue: 1 << 2)
-    static var UIBorderSideTypeBottom: UIBorderSideType = UIBorderSideType(rawValue: 1 << 3)
+    static var UIBorderSideTypeLeft: UIBorderSideType = UIBorderSideType(rawValue: 1 )
+    static var UIBorderSideTypeRight: UIBorderSideType = UIBorderSideType(rawValue: 2)
+    static var UIBorderSideTypeTop: UIBorderSideType = UIBorderSideType(rawValue: 3)
+    static var UIBorderSideTypeBottom: UIBorderSideType = UIBorderSideType(rawValue: 4)
 }
 
 extension UIView {
@@ -130,5 +163,12 @@ extension UIView {
     
     var centerRect: CGRect {
         return CGRect(x: bounds.midX, y: bounds.midY, width: 0, height: 0)
+    }
+    
+    func addOnClickListener(target: AnyObject, action: Selector) {
+        let gr = UITapGestureRecognizer(target: target, action: action)
+        gr.numberOfTapsRequired = 1
+        isUserInteractionEnabled = true
+        addGestureRecognizer(gr)
     }
 }

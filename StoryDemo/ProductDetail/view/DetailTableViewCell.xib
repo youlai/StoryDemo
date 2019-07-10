@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="224" id="KGk-i7-Jjw" customClass="DetailTableViewCell" customModule="StoryDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="289" height="224"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="289" height="223.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2M9-oF-xJu">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="40"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="abP-TM-IzB">
+                                <rect key="frame" x="6" y="0.0" width="277.5" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZ4-Yh-S0g">
+                                        <rect key="frame" x="0.0" y="19.5" width="100" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="3QZ-Ye-MxK"/>
+                                            <constraint firstAttribute="width" constant="100" id="GXG-hL-HFv"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝贝详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwP-v9-mch">
+                                        <rect key="frame" x="110" y="11.5" width="57.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAn-Sf-aeU">
+                                        <rect key="frame" x="177.5" y="19.5" width="100" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="SXr-xa-GML"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="yZd-V9-mGC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87557503169999995" green="0.87557503169999995" blue="0.87557503169999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="abP-TM-IzB" firstAttribute="centerY" secondItem="2M9-oF-xJu" secondAttribute="centerY" id="1NH-92-89W"/>
+                            <constraint firstItem="abP-TM-IzB" firstAttribute="centerX" secondItem="2M9-oF-xJu" secondAttribute="centerX" id="Cti-af-Kuz"/>
+                            <constraint firstAttribute="height" constant="40" id="G1t-jO-jR0"/>
+                            <constraint firstItem="abP-TM-IzB" firstAttribute="height" secondItem="2M9-oF-xJu" secondAttribute="height" id="zJj-MI-RGR"/>
+                        </constraints>
+                    </view>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZk-j5-HcP">
+                        <rect key="frame" x="0.0" y="54" width="289" height="169.5"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="169.5" id="UYB-2f-sBH"/>
+                        </constraints>
+                    </webView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2M9-oF-xJu" secondAttribute="trailing" id="MmW-DL-qpn"/>
+                    <constraint firstAttribute="trailing" secondItem="EZk-j5-HcP" secondAttribute="trailing" id="XiI-VL-lSo"/>
+                    <constraint firstAttribute="bottom" secondItem="EZk-j5-HcP" secondAttribute="bottom" id="YQR-Db-bGO"/>
+                    <constraint firstItem="EZk-j5-HcP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gaN-M7-grB"/>
+                    <constraint firstItem="EZk-j5-HcP" firstAttribute="top" secondItem="2M9-oF-xJu" secondAttribute="bottom" constant="14" id="oi4-ca-6dY"/>
+                    <constraint firstItem="2M9-oF-xJu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rX9-X4-E8a"/>
+                    <constraint firstItem="2M9-oF-xJu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yMf-8r-hbJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="webview" destination="EZk-j5-HcP" id="ZJO-nS-GUP"/>
+            </connections>
+            <point key="canvasLocation" x="9.5" y="142"/>
+        </tableViewCell>
+    </objects>
+</document>

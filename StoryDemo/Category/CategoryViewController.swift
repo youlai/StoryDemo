@@ -33,7 +33,7 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
         left_view.estimatedRowHeight = 40
         left_view.dataSource=self
         left_view.delegate=self
-        left_view.backgroundColor=UIColor.lightGray
+        left_view.backgroundColor="#EEEEEE".color()
         left_view.separatorStyle=UITableViewCellSeparatorStyle.none
         left_view.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
         left_view.contentInset=UIEdgeInsetsMake(0, 0, 0, 0)
@@ -129,15 +129,19 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=left_view.dequeueReusableCell(withIdentifier: "re") as!LeftTableViewCell
         cell.name.text=cateList[indexPath.row].Name
+//        cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
         if selectIndex==indexPath {
             cell.name.textColor=UIColor.red
-            cell.border(color: UIColor.red, width: 2, type: UIBorderSideType.UIBorderSideTypeLeft, cornerRadius: 0)
-            cell.border(color: UIColor.gray, width: 0.5, type: UIBorderSideType.UIBorderSideTypeBottom, cornerRadius: 0)
+            cell.drawLine(strokeColor: UIColor.red, lineWidth: 4, corners: UIRectSide.left)
+            cell.drawLine(strokeColor: UIColor.white, lineWidth: 1, corners: UIRectSide.right)
+            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
         }else{
             cell.name.textColor=UIColor.black
-            cell.border(color: UIColor.gray, width: 0.5, type: UIBorderSideType.UIBorderSideTypeRight, cornerRadius: 0)
-            cell.border(color: UIColor.gray, width: 0.5, type: UIBorderSideType.UIBorderSideTypeBottom, cornerRadius: 0)
+            cell.drawLine(strokeColor: UIColor.white, lineWidth: 4, corners: UIRectSide.left)
+            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.right)
+            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
         }
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -145,8 +149,10 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
         left_view.reloadData()
         rightList=cateList[indexPath.row].SubCategories
         right_view.reloadData()
-        let ind:IndexPath=IndexPath(row: 0, section: 0)
-        right_view.scrollToItem(at: ind, at: UICollectionViewScrollPosition.bottom, animated: false)
+        if rightList.count>0 {
+            let ind:IndexPath=IndexPath(row: 0, section: 0)
+            right_view.scrollToItem(at: ind, at: UICollectionViewScrollPosition.bottom, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
