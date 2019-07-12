@@ -48,6 +48,10 @@
 		0449F59B22D82A67005BD4EB /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0449F59922D82A67005BD4EB /* ProductCollectionViewCell.xib */; };
 		0449F59D22D82E3C005BD4EB /* ProductCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F59C22D82E3C005BD4EB /* ProductCollectionViewController.swift */; };
 		0449F5A222D83AF1005BD4EB /* GiftListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F5A122D83AF1005BD4EB /* GiftListResult.swift */; };
+		0449F5A522D85EB5005BD4EB /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F5A322D85EB5005BD4EB /* CartItemTableViewCell.swift */; };
+		0449F5A622D85EB5005BD4EB /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0449F5A422D85EB5005BD4EB /* CartItemTableViewCell.xib */; };
+		0449F5AB22D868BC005BD4EB /* CartShopItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F5A922D868BC005BD4EB /* CartShopItemTableViewCell.swift */; };
+		0449F5AC22D868BC005BD4EB /* CartShopItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0449F5AA22D868BC005BD4EB /* CartShopItemTableViewCell.xib */; };
 		0453F6A222CD940D0075A4C8 /* TwoLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F6A022CD940D0075A4C8 /* TwoLabelTableViewCell.swift */; };
 		0453F6A322CD940D0075A4C8 /* TwoLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0453F6A122CD940D0075A4C8 /* TwoLabelTableViewCell.xib */; };
 		0453F6A522CDFCA80075A4C8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453F6A422CDFCA80075A4C8 /* TabBarViewController.swift */; };
@@ -117,6 +121,10 @@
 		0449F59922D82A67005BD4EB /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		0449F59C22D82E3C005BD4EB /* ProductCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewController.swift; sourceTree = "<group>"; };
 		0449F5A122D83AF1005BD4EB /* GiftListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftListResult.swift; sourceTree = "<group>"; };
+		0449F5A322D85EB5005BD4EB /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
+		0449F5A422D85EB5005BD4EB /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
+		0449F5A922D868BC005BD4EB /* CartShopItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartShopItemTableViewCell.swift; sourceTree = "<group>"; };
+		0449F5AA22D868BC005BD4EB /* CartShopItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartShopItemTableViewCell.xib; sourceTree = "<group>"; };
 		0453F6A022CD940D0075A4C8 /* TwoLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelTableViewCell.swift; sourceTree = "<group>"; };
 		0453F6A122CD940D0075A4C8 /* TwoLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLabelTableViewCell.xib; sourceTree = "<group>"; };
 		0453F6A422CDFCA80075A4C8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				0410AFD722CC7B36005DF13D /* ShoppingCartViewController.swift */,
+				0449F5A322D85EB5005BD4EB /* CartItemTableViewCell.swift */,
+				0449F5A422D85EB5005BD4EB /* CartItemTableViewCell.xib */,
+				0449F5A922D868BC005BD4EB /* CartShopItemTableViewCell.swift */,
+				0449F5AA22D868BC005BD4EB /* CartShopItemTableViewCell.xib */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -448,6 +460,7 @@
 				0433188D22D42B3B009C7141 /* ProductDetailViewController.xib in Resources */,
 				04F54AD122D59ACB00B57B0A /* DetailTableViewCell.xib in Resources */,
 				04F54ACD22D594B000B57B0A /* EvaluateTableViewCell.xib in Resources */,
+				0449F5AC22D868BC005BD4EB /* CartShopItemTableViewCell.xib in Resources */,
 				04338A7322D045D60060A3BF /* success.png in Resources */,
 				04338A7422D045D60060A3BF /* success@2x.png in Resources */,
 				04F54AC922D57AC500B57B0A /* BabyTableViewCell.xib in Resources */,
@@ -459,6 +472,7 @@
 				04020D3922C5AD2C009611D7 /* TestViewController.xib in Resources */,
 				04020D2A22C46219009611D7 /* Main.storyboard in Resources */,
 				0449F59B22D82A67005BD4EB /* ProductCollectionViewCell.xib in Resources */,
+				0449F5A622D85EB5005BD4EB /* CartItemTableViewCell.xib in Resources */,
 				04F68ED922CB424C00FD2D9E /* HomeHeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +492,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/PPNumberButtonSwift/PPNumberButtonSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -492,6 +507,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPNumberButtonSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -554,6 +570,7 @@
 				0449F59D22D82E3C005BD4EB /* ProductCollectionViewController.swift in Sources */,
 				0404437322D310B5006A0964 /* CategoryResult.swift in Sources */,
 				0404437022D3089B006A0964 /* CategoryCollectionViewCell.swift in Sources */,
+				0449F5AB22D868BC005BD4EB /* CartShopItemTableViewCell.swift in Sources */,
 				04F54ACC22D594B000B57B0A /* EvaluateTableViewCell.swift in Sources */,
 				040D1E8322CB2FD9005BC82C /* ShopViewController.swift in Sources */,
 				0404436922D2FE92006A0964 /* CategoryViewController.swift in Sources */,
@@ -563,6 +580,7 @@
 				0449F5A222D83AF1005BD4EB /* GiftListResult.swift in Sources */,
 				049F059A22C5FDDC006EE84F /* ProductModel.swift in Sources */,
 				0453F6A222CD940D0075A4C8 /* TwoLabelTableViewCell.swift in Sources */,
+				0449F5A522D85EB5005BD4EB /* CartItemTableViewCell.swift in Sources */,
 				04F68ED822CB424C00FD2D9E /* HomeHeaderCell.swift in Sources */,
 				04F54AC822D57AC500B57B0A /* BabyTableViewCell.swift in Sources */,
 				0453F6A522CDFCA80075A4C8 /* TabBarViewController.swift in Sources */,

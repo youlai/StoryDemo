@@ -20,4 +20,6 @@ pod 'MJRefresh','3.1.12'
 pod 'Kingfisher', '3.13.0'
 pod 'IQKeyboardManagerSwift', '5.0.0'
 pod 'SwiftTTPageController'
+pod 'PPNumberButtonSwift'
+
 end

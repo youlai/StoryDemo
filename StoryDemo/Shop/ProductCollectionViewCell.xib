@@ -14,20 +14,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="StoryDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="297" height="397"/>
+            <rect key="frame" x="0.0" y="0.0" width="344" height="453"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="297" height="397"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="453"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-9V-gKS">
-                        <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="344"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Vur-9V-gKS" secondAttribute="height" multiplier="1:1" id="Cf9-Sb-9eN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汽车挪车电话号码牌创意移车车载临时停车牌卡通手机可爱韩国个性" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-ry-hsO">
-                        <rect key="frame" x="10" y="307" width="277" height="40"/>
+                        <rect key="frame" x="10" y="354" width="324" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="6uH-fg-GXP"/>
                         </constraints>
@@ -36,20 +36,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jinbi" translatesAutoresizingMaskIntoConstraints="NO" id="WiU-Y0-Z7o">
-                        <rect key="frame" x="10" y="363" width="20" height="20"/>
+                        <rect key="frame" x="10" y="410" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="AJq-ct-q29"/>
                             <constraint firstAttribute="height" constant="20" id="r65-Z5-02t"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-MG-dap">
-                        <rect key="frame" x="40" y="365" width="35.5" height="17"/>
+                        <rect key="frame" x="40" y="412" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="0.1307592309" blue="0.2833855046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvb-eG-YQS">
-                        <rect key="frame" x="225" y="359.5" width="62" height="27"/>
+                        <rect key="frame" x="272" y="406.5" width="62" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="去免费兑换">
                             <color key="titleColor" red="1" green="0.1307592309" blue="0.2833855046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,14 +74,14 @@
                 <constraint firstItem="WiU-Y0-Z7o" firstAttribute="leading" secondItem="fM6-ry-hsO" secondAttribute="leading" id="tLR-oD-Zt2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="297" height="397"/>
+            <size key="customSize" width="344" height="453"/>
             <connections>
                 <outlet property="buy" destination="rvb-eG-YQS" id="3di-ed-ZM0"/>
                 <outlet property="count" destination="b9G-MG-dap" id="Mhq-Bx-BwU"/>
                 <outlet property="icon" destination="Vur-9V-gKS" id="v5C-Kz-i9N"/>
                 <outlet property="name" destination="fM6-ry-hsO" id="TcR-qq-ab0"/>
             </connections>
-            <point key="canvasLocation" x="-68.5" y="63.5"/>
+            <point key="canvasLocation" x="-96" y="94.5"/>
         </collectionViewCell>
     </objects>
     <resources>
