@@ -1,18 +1,22 @@
 //
-//  LeftTableViewCell.swift
+//  MineTableViewCell.swift
 //  StoryDemo
 //
-//  Created by mac on 2019/7/8.
+//  Created by mac on 2019/7/11.
 //  Copyright © 2019年 zhkj. All rights reserved.
 //
 
 import UIKit
 
-class LeftTableViewCell: UITableViewCell {
+class MineTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var left_line: UIView!
-    @IBOutlet weak var right_line: UIView!
+    
+    @IBOutlet weak var one_view: UIView!
+    @IBOutlet weak var two_view: UIView!
+    @IBOutlet weak var three_view: UIView!
+    @IBOutlet weak var four_view: UIView!
+    @IBOutlet weak var avator: UIImageView!
+    @IBOutlet weak var five_view: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

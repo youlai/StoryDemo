@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="StoryDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="397"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="397"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-9V-gKS">
+                        <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Vur-9V-gKS" secondAttribute="height" multiplier="1:1" id="Cf9-Sb-9eN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汽车挪车电话号码牌创意移车车载临时停车牌卡通手机可爱韩国个性" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-ry-hsO">
+                        <rect key="frame" x="10" y="307" width="277" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="6uH-fg-GXP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jinbi" translatesAutoresizingMaskIntoConstraints="NO" id="WiU-Y0-Z7o">
+                        <rect key="frame" x="10" y="363" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="AJq-ct-q29"/>
+                            <constraint firstAttribute="height" constant="20" id="r65-Z5-02t"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-MG-dap">
+                        <rect key="frame" x="40" y="365" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.1307592309" blue="0.2833855046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvb-eG-YQS">
+                        <rect key="frame" x="225" y="359.5" width="62" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="去免费兑换">
+                            <color key="titleColor" red="1" green="0.1307592309" blue="0.2833855046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fM6-ry-hsO" firstAttribute="top" secondItem="Vur-9V-gKS" secondAttribute="bottom" constant="10" id="52h-gW-O0v"/>
+                <constraint firstItem="Vur-9V-gKS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7Ka-BK-dsT"/>
+                <constraint firstItem="Vur-9V-gKS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7PB-nh-FAR"/>
+                <constraint firstItem="fM6-ry-hsO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="8TI-Zt-kJC"/>
+                <constraint firstAttribute="trailing" secondItem="fM6-ry-hsO" secondAttribute="trailing" constant="10" id="Ka4-yf-fCP"/>
+                <constraint firstAttribute="trailing" secondItem="rvb-eG-YQS" secondAttribute="trailing" constant="10" id="Mac-AL-CeN"/>
+                <constraint firstItem="b9G-MG-dap" firstAttribute="centerY" secondItem="WiU-Y0-Z7o" secondAttribute="centerY" id="TuC-1M-MWm"/>
+                <constraint firstItem="b9G-MG-dap" firstAttribute="leading" secondItem="WiU-Y0-Z7o" secondAttribute="trailing" constant="10" id="WAf-ZM-B0Z"/>
+                <constraint firstItem="WiU-Y0-Z7o" firstAttribute="top" secondItem="fM6-ry-hsO" secondAttribute="bottom" constant="16" id="YQN-ns-HYK"/>
+                <constraint firstAttribute="trailing" secondItem="Vur-9V-gKS" secondAttribute="trailing" id="ekw-Lr-eRO"/>
+                <constraint firstItem="rvb-eG-YQS" firstAttribute="centerY" secondItem="b9G-MG-dap" secondAttribute="centerY" id="ifA-Fv-caA"/>
+                <constraint firstAttribute="bottom" secondItem="WiU-Y0-Z7o" secondAttribute="bottom" priority="999" constant="30" id="nee-Nb-E7K"/>
+                <constraint firstItem="WiU-Y0-Z7o" firstAttribute="leading" secondItem="fM6-ry-hsO" secondAttribute="leading" id="tLR-oD-Zt2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="297" height="397"/>
+            <connections>
+                <outlet property="buy" destination="rvb-eG-YQS" id="3di-ed-ZM0"/>
+                <outlet property="count" destination="b9G-MG-dap" id="Mhq-Bx-BwU"/>
+                <outlet property="icon" destination="Vur-9V-gKS" id="v5C-Kz-i9N"/>
+                <outlet property="name" destination="fM6-ry-hsO" id="TcR-qq-ab0"/>
+            </connections>
+            <point key="canvasLocation" x="-68.5" y="63.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="1024" height="508"/>
+        <image name="jinbi" width="200" height="200"/>
+    </resources>
+</document>

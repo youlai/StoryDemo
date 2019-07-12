@@ -38,6 +38,8 @@ class ProductDetailViewController: UIViewController,UITableViewDataSource,UITabl
         tableview.estimatedRowHeight=80
         tableview.rowHeight=UITableViewAutomaticDimension
         tableview.separatorStyle=UITableViewCellSeparatorStyle.none
+        
+        tableview.contentInset=UIEdgeInsetsMake(-20, 0, 0, 0)
         tableview.register(UINib(nibName: "BabyTableViewCell", bundle: nil), forCellReuseIdentifier: "b")
         tableview.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "d")
         tableview.register(UINib(nibName: "EvaluateTableViewCell", bundle: nil), forCellReuseIdentifier: "e")

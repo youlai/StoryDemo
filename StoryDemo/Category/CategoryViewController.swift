@@ -16,7 +16,7 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
     @IBOutlet weak var search_view: UIView!
     var left_view:UITableView!
     var right_view:UICollectionView!
-    var selectIndex:IndexPath?
+    var selectIndex:IndexPath = IndexPath(row: 0, section: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
         search_view.layer.cornerRadius=5
@@ -127,19 +127,23 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=left_view.dequeueReusableCell(withIdentifier: "re") as!LeftTableViewCell
+        let cell=left_view.dequeueReusableCell(withIdentifier: "re", for: indexPath) as!
+        LeftTableViewCell
         cell.name.text=cateList[indexPath.row].Name
-//        cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
         if selectIndex==indexPath {
+            rightList=cateList[indexPath.row].SubCategories
+            right_view.reloadData()
+            if rightList.count>0 {
+                let ind:IndexPath=IndexPath(row: 0, section: 0)
+                right_view.scrollToItem(at: ind, at: UICollectionViewScrollPosition.bottom, animated: false)
+            }
             cell.name.textColor=UIColor.red
-            cell.drawLine(strokeColor: UIColor.red, lineWidth: 4, corners: UIRectSide.left)
-            cell.drawLine(strokeColor: UIColor.white, lineWidth: 1, corners: UIRectSide.right)
-            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
+            cell.left_line.isHidden=false
+            cell.right_line.isHidden=true
         }else{
             cell.name.textColor=UIColor.black
-            cell.drawLine(strokeColor: UIColor.white, lineWidth: 4, corners: UIRectSide.left)
-            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.right)
-            cell.drawLine(strokeColor: UIColor.gray, lineWidth: 1, corners: UIRectSide.bottom)
+            cell.left_line.isHidden=true
+            cell.right_line.isHidden=false 
         }
         cell.selectionStyle = .none
         return cell
@@ -147,12 +151,6 @@ class CategoryViewController: UIViewController,UITableViewDataSource,UICollectio
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectIndex=indexPath
         left_view.reloadData()
-        rightList=cateList[indexPath.row].SubCategories
-        right_view.reloadData()
-        if rightList.count>0 {
-            let ind:IndexPath=IndexPath(row: 0, section: 0)
-            right_view.scrollToItem(at: ind, at: UICollectionViewScrollPosition.bottom, animated: false)
-        }
     }
 
     override func didReceiveMemoryWarning() {
